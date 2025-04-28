@@ -29,19 +29,19 @@ The application displays a list of Pokémon with basic information and supports 
 
 ---
 
-## 🛠 Technical Details
 
-- Built using **React functional components** with **React Hooks**.
-- **Reusable components** structure for better maintainability.
-- Handles edge cases like:
-  - No search results.
-  - API loading errors.
-- Clean and organized folder structure.
-
----
 
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/pokemon-explorer.git
+git clone https://github.com/Aditya19Gupta/interactive-data-explorer.git
+```
+## 2. Install Dependency
+```bash
+>> npm install
+```
+## 3. Run Project
+```bash
+>> npm run dev
+```
