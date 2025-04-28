@@ -1,7 +1,7 @@
 import React from 'react';
 
 function PokemonCard({ pokemon }) {
-    console.log(pokemon)
+   
   return (
     <div className="pokemon-card shadow-violet-500 shadow-md w-fit p-7 rounded-3xl ">
       <img  
