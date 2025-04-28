@@ -16,7 +16,7 @@ function App() {
     async function fetchPokemons() {
       try {
         const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=150');
-         const data = await res.json();
+        const data = await res.json();
         // // console.log(data)
         const pokemonDetails = await Promise.all(
           data.results.map(async (pokemon) => {
@@ -53,12 +53,12 @@ function App() {
   }, [searchTerm, typeFilter]);
 
   function filterPokemons() {
-    let filtered = pokemons.filter((pokemon) => 
+    let filtered = pokemons.filter((pokemon) =>
       pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     if (typeFilter !== 'All') {
-      filtered = filtered.filter((pokemon) => 
+      filtered = filtered.filter((pokemon) =>
         pokemon.types.some((t) => t.type.name === typeFilter)
       );
     }
@@ -76,15 +76,20 @@ function App() {
   return (
     <div className="app-container ">
       <Header />
-      <SearchBar 
+      <SearchBar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         typeFilter={typeFilter}
         setTypeFilter={setTypeFilter}
         typesList={typesList}
       />
-      
-      <div className="ml-5 pokemon-grid grid grid-cols-6 gap-4 justify-items-center align-middle">
+
+      <div className="ml-5 pokemon-grid grid 
+              sm:grid-cols-2 
+              md:grid-cols-3 
+              lg:grid-cols-4 
+              xl:grid-cols-6 
+              gap-4 justify-items-center items-center">
         {filteredPokemons.length > 0 ? (
           filteredPokemons.map((pokemon) => (
             <PokemonCard key={pokemon.id} pokemon={pokemon} />
